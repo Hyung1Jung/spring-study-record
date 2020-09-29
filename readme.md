@@ -38,8 +38,9 @@
 * [스프링을 위한 자바 객체 지향의 원리와 이해를 읽으며 중요한 것들 위주로 정리](https://junghyungil.tistory.com/97?category=892275)
 * [객체 지향 설계 5원칙 - SOLID](https://junghyungil.tistory.com/98?category=892275)
 
-### 토비의 스프링
-
+### 토비의 스프링 (면접에서 물어볼만한 키워드들로 정리...공부하며 밑 줄친 문장들 위주...)
+* [들어가며](https://github.com/Hyung1Jung/spring-study-record/blob/master/toby-of-spring/0.%20%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0.md)
+* [1장, 오브젝트와 의존관계](https://github.com/Hyung1Jung/spring-study-record/blob/master/toby-of-spring/1.%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%EC%99%80%20%EC%9D%98%EC%A1%B4%EA%B4%80%EA%B3%84.md)
 
 ### JPA
 * [자바 ORM 표준 JPA 프로그래밍](https://github.com/Hyung1Jung/jpa)
