@@ -1,4 +1,4 @@
-package com.example.validatingforminput.restservice;
+package com.example.testingweb.validatingforminput.restservice;
 
 public class Greeting {
     private final long id;

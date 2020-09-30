@@ -1,4 +1,4 @@
-package com.example.validatingforminput;
+package com.example.testingweb.validatingforminput;
 
 import javax.validation.Valid;
 

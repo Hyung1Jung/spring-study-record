@@ -1,4 +1,4 @@
-package com.example.validatingforminput.restservice;
+package com.example.testingweb.validatingforminput.restservice;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
