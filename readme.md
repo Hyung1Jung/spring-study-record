@@ -17,7 +17,6 @@ TDD
 * [예외처리 할 때, controller 전역에 적용되는 ControllerAdvice annotation -> 1. @RestControllerAdvice](https://junghyungil.tistory.com/57?category=892281)
 * [예외처리 할 때, controller 전역에 적용되는 ControllerAdvice annotation -> 2. @ControllerAdvice](https://junghyungil.tistory.com/57?category=892281)
 * [Junit4 -> Junit5 (목적(쓰임새)은 같지만 4 -> 5 로직 비교)](https://junghyungil.tistory.com/78?category=892281)
-ATDD
 
 
 AOP
