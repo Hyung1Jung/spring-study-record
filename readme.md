@@ -2,7 +2,7 @@
 
 * [스프링이란 무엇?](https://junghyungil.tistory.com/11)
 * [Spring이 왜 Spring인지? 와  SpringBoot VS Spring](https://junghyungil.tistory.com/62?category=892281)
-* [intellJ로 Maven(Spring Boot) 프로젝트 생성하기](https://junghyungil.tistory.com/29?category=892281)
+* [IntellJ로 Maven(Spring Boot) 프로젝트 생성하기](https://junghyungil.tistory.com/29?category=892281)
 * [Spring Boot Devtools을 이용한 자동화](https://junghyungil.tistory.com/36?category=892281)
 * [의존성 주입(DI)과 스프링 및 테스트코드](https://junghyungil.tistory.com/13?category=892281)
 * [필드주입보다 생성자 주입을 권하는 이유, Autowired의 3가지 방법](https://junghyungil.tistory.com/50?category=892281)
