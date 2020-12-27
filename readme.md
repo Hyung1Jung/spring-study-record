@@ -1,5 +1,6 @@
 ## Spring I Leraned
 
+* [레이어 구조](https://junghyungil.tistory.com/86?category=892281)
 * [스프링이란 무엇?](https://junghyungil.tistory.com/11)
 * [Spring이 왜 Spring인지? 와  SpringBoot VS Spring](https://junghyungil.tistory.com/62?category=892281)
 * [IntellJ로 Maven(Spring Boot) 프로젝트 생성하기](https://junghyungil.tistory.com/29?category=892281)
@@ -10,7 +11,6 @@
 * [HTTP 방식 중 URLConnection, HttpClient보다  RestTemplate가 효율적인 이유](https://junghyungil.tistory.com/84?category=892281)
 
 TDD
-
 * [단위테스트시 좀 더 정확한 테스트를 위하여 고급 기술 ArgumenMatcher](https://junghyungil.tistory.com/51?category=892281)
 * [checked exception을 unchecked exception으로 변경해서 던져야 하는 경우](https://junghyungil.tistory.com/52?category=892281)
 * [예외처리를 위한 ExceptionHandler 및 아주 간단한 responseentity](https://junghyungil.tistory.com/53?category=892281)
