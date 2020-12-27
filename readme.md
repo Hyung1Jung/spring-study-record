@@ -9,6 +9,7 @@
 * [필드주입보다 생성자 주입을 권하는 이유, Autowired의 3가지 방법](https://junghyungil.tistory.com/50?category=892281)
 * [프론트와 백이 서로 다른 주소를 가지고 있을 때 @CrossOrigin을 이용한 통신](https://junghyungil.tistory.com/80?category=892281)
 * [HTTP 방식 중 URLConnection, HttpClient보다  RestTemplate가 효율적인 이유](https://junghyungil.tistory.com/84?category=892281)
+* [RestTemplate(2), xml -> json 변환 후, jackson을 이용하여 DTO와 mapping](https://junghyungil.tistory.com/87?category=892281)
 
 TDD
 * [단위테스트 & 통합테스트](https://junghyungil.tistory.com/85?category=892281)
