@@ -1,1 +1,3 @@
 rootProject.name = 'practice'
+
+include 'inflearn-spring-core-principles'

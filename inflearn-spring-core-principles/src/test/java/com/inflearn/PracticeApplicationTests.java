@@ -1,4 +1,4 @@
-package com.skhu.sof.hyungil.practice;
+package com.inflearn;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

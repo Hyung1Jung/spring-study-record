@@ -1,4 +1,4 @@
-package com.skhu.sof.hyungil.practice;
+package com.inflearn;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
