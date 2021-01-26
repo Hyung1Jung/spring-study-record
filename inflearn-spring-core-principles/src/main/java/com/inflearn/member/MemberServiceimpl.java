@@ -2,7 +2,8 @@ package com.inflearn.member;
 
 public class MemberServiceimpl implements MemberService{
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    // MemberServiceimpl이 MemberRepository(추상화)에도 의존하고 MemoryMemberRepository(구현체)에도 의존한다. DIP 위반반
+   private final MemberRepository memberRepository = new MemoryMemberRepository();
 
     @Override
     public void join(Member member) {
