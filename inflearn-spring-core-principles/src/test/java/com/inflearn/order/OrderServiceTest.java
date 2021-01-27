@@ -3,14 +3,21 @@ package com.inflearn.order;
 import com.inflearn.member.Grade;
 import com.inflearn.member.Member;
 import com.inflearn.member.MemberService;
-import com.inflearn.member.MemberServiceimpl;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class OrderServiceTest {
 
-    MemberService memberService = new MemberServiceimpl();
-    OrderService orderService = new OrderServiceimpl();
+    MemberService memberService;
+    OrderService orderService;
+
+    @BeforeEach
+    public void beforeEach() {
+        AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+        orderService = appConfig.orderService();
+    }
 
     @Test
     void createOrder() {
