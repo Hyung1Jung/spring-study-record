@@ -3,15 +3,16 @@ package com.inflearn;
 import com.inflearn.member.Grade;
 import com.inflearn.member.Member;
 import com.inflearn.member.MemberService;
-import com.inflearn.member.MemberServiceimpl;
+import com.inflearn.order.AppConfig;
 import com.inflearn.order.Order;
 import com.inflearn.order.OrderService;
-import com.inflearn.order.OrderServiceimpl;
 
 public class OrderApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceimpl();
-        OrderService orderService = new OrderServiceimpl();
+
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
 
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
