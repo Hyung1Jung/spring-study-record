@@ -1,15 +1,16 @@
 package com.inflearn.member;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MemberServiceimpl implements MemberService{
+public class MemberServiceimpl implements MemberService {
 
-    // MemberServiceimpl이 MemberRepository(추상화)에도 의존하고 MemoryMemberRepository(구현체)에도 의존한다. DIP 위반반
-   private final MemberRepository memberRepository;
+    // MemberServiceimpl이 MemberRepository(추상화)에도 의존하고 MemoryMemberRepository(구현체)에도 의존한다. DIP 위반
+    private final MemberRepository memberRepository;
 
-   @Autowired // ac,getBean(MemberRepository.class)
+    @Autowired // ac.getBean(MemberRepository.class)
     public MemberServiceimpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
@@ -17,7 +18,6 @@ public class MemberServiceimpl implements MemberService{
     @Override
     public void join(Member member) {
         memberRepository.save(member);
-
     }
 
     @Override
