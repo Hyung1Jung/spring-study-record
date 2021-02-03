@@ -3,7 +3,6 @@ package com.inflearn;
 import com.inflearn.member.Grade;
 import com.inflearn.member.Member;
 import com.inflearn.member.MemberService;
-import com.inflearn.order.AppConfig;
 import com.inflearn.order.Order;
 import com.inflearn.order.OrderService;
 import org.springframework.context.ApplicationContext;

@@ -1,7 +1,7 @@
 package com.inflearn.singleton;
 
 import com.inflearn.member.MemberService;
-import com.inflearn.order.AppConfig;
+import com.inflearn.AppConfig;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;

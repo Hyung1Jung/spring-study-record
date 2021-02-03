@@ -1,4 +1,4 @@
-package com.inflearn.order;
+package com.inflearn;
 
 import com.inflearn.member.MemberRepository;
 import com.inflearn.member.MemoryMemberRepository;

@@ -2,7 +2,7 @@ package com.inflearn.singleton;
 
 import com.inflearn.member.MemberRepository;
 import com.inflearn.member.MemberServiceimpl;
-import com.inflearn.order.AppConfig;
+import com.inflearn.AppConfig;
 import com.inflearn.order.OrderServiceimpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;

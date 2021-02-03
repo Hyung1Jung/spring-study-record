@@ -1,5 +1,6 @@
 package com.inflearn.order;
 
+import com.inflearn.AppConfig;
 import com.inflearn.member.Grade;
 import com.inflearn.member.Member;
 import com.inflearn.member.MemberService;

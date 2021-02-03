@@ -1,9 +1,7 @@
 package com.inflearn.beanfind;
 
-import com.inflearn.discount.DiscountPolicy;
 import com.inflearn.member.MemberRepository;
 import com.inflearn.member.MemoryMemberRepository;
-import com.inflearn.order.AppConfig;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
