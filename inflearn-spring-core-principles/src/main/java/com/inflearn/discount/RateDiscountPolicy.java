@@ -1,12 +1,13 @@
 package com.inflearn.discount;
 
+import com.inflearn.annotaion.MainDiscountPolicy;
 import com.inflearn.member.Grade;
 import com.inflearn.member.Member;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary
+@MainDiscountPolicy
 public class RateDiscountPolicy implements DiscountPolicy {
 
     private int discountPercent = 10;
