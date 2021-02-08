@@ -1,4 +1,4 @@
-# Spring I Leraned
+# Spring Study
 
 ### Production Code
 * [스프링이란 무엇?](https://junghyungil.tistory.com/11)
@@ -24,19 +24,22 @@
 
 
 ### AOP
-
 * [Spring AOP(Aspect)를 이용한 메서드 시간측정 및 @LogExecutionTime, JoinPoint 활용 ](https://junghyungil.tistory.com/56?category=8922)
 
 ### 스프링을 위한 객체지향
 * [스프링을 위한 자바 객체 지향의 원리와 이해를 읽으며 중요한 것들 위주로 정리](https://junghyungil.tistory.com/97?category=892275)
 * [객체 지향 설계 5원칙 - SOLID](https://junghyungil.tistory.com/98?category=892275)
 
+### Network
+* [Web Server, WAS 차이와 이 두 개를 따로 두는 경우](https://junghyungil.tistory.com/108?category=892281)
 
 ---
 ### IntellJ TIP
 
 * [Translator Plugins (IntellJ에서 한 -> 영 번역)](https://junghyungil.tistory.com/63?category=905725)
 * [IntelliJ JSON Fragment Edit 기능](https://junghyungil.tistory.com/79?category=905725)
+
+
 
 
 
