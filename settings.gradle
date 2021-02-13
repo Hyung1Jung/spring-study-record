@@ -4,4 +4,5 @@ include 'inflearn-spring-core-principles'
 include 'rest-serivce'
 include 'consuming-rest'
 include 'inflearn-the-java-test'
+include 'validating-form-input'
 
