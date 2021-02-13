@@ -1,4 +1,4 @@
-package com.example.consumingrest;
+package com.example.validatingforminput.consumingrest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,8 +26,10 @@ public class ConsumingRestApplication {
     @Bean
     public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
         return args -> {
-            Quote quote = restTemplate.getForObject(
-                    "https://gturnquist-quoters.cfapps.io/api/random", Quote.class);
+            Value value = restTemplate.getForObject(
+                    "http://time.jsontest.com/", Value.class);
+            Quote quote = new Quote();
+            quote.setValue(value);
             log.info(quote.toString());
         };
     }

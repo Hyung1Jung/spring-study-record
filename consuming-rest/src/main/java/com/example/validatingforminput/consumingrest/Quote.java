@@ -1,4 +1,4 @@
-package com.example.consumingrest;
+package com.example.validatingforminput.consumingrest;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
