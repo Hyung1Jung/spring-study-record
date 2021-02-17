@@ -34,6 +34,7 @@
 ### Network
 * [Web Server, WAS 차이와 이 두 개를 따로 두는 경우](https://junghyungil.tistory.com/108?category=892281)
 * [Apache MPM vs Nginx](https://junghyungil.tistory.com/category/Spring)
+* [HttpServlet와 Spring, Dispatcher-Servlet](https://junghyungil.tistory.com/119?category=892281)
 
 ### OS
 * [Proxy](https://junghyungil.tistory.com/114?category=892281)
