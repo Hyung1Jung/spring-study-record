@@ -32,7 +32,7 @@
 * [객체 지향 설계 5원칙 - SOLID](https://junghyungil.tistory.com/98?category=892275)
 
 ### JPA
-
+- [자바 ORM 표준 JPA 프로그래밍](https://github.com/Hyung1Jung/jpa)
 ### Network
 * [Web Server, WAS 차이와 이 두 개를 따로 두는 경우](https://junghyungil.tistory.com/108?category=892281)
 * [Apache MPM vs Nginx](https://junghyungil.tistory.com/118?category=892281)
