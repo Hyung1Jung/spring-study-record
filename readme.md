@@ -14,6 +14,7 @@
 * [HTTP 방식 중 URLConnection, HttpClient보다  RestTemplate가 효율적인 이유](https://junghyungil.tistory.com/84?category=892281)
 * [RestTemplate(2), xml -> json 변환 후, jackson을 이용하여 DTO와 mapping](https://junghyungil.tistory.com/87?category=892281)
 * [Filter와 Interceptor](https://junghyungil.tistory.com/123?category=892281)
+
 ### TDD
 * [단위테스트 & 통합테스트](https://junghyungil.tistory.com/85?category=892281)
 * [단위테스트시 좀 더 정확한 테스트를 위하여 고급 기술 ArgumenMatcher](https://junghyungil.tistory.com/51?category=892281)
@@ -24,6 +25,10 @@
 * [예외처리 할 때, controller 전역에 적용되는 ControllerAdvice annotation -> 2. @ControllerAdvice](https://junghyungil.tistory.com/57?category=892281)
 * [Junit4 -> Junit5 (목적(쓰임새)은 같지만 4 -> 5 로직 비교)](https://junghyungil.tistory.com/78?category=892281)
 
+- 인프런 더 자바
+    - [Junit5, Mockito, 도커와테스트 및 성능테스트 정리](https://www.notion.so/e905531d8b4248feabeb8958cb976481)
+    - [코드 모음](https://github.com/Hyung1Jung/spring-study-record/tree/master/inflearn-the-java-test/src) 
+    - [출처](https://www.inflearn.com/course/the-java-application-test#curriculum)
 
 ### AOP
 * [Spring AOP와 AspectJ](https://junghyungil.tistory.com/111?category=892281)
