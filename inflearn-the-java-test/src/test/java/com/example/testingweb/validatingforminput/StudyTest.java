@@ -4,19 +4,19 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
+@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class StudyTest {
 
     @Test
-    void create() {
+    @DisplayName("스터디 만들기")
+    void create_new_Study() {
         Study study = new Study();
         assertNotNull(study);
         System.out.println("create");
     }
 
     @Test
-    @Disabled // 이 테스트를 실행하고 싶지 않다.
-    void create1() {
+    void create1_new_study_again() {
         System.out.println("create1");
     }
 
