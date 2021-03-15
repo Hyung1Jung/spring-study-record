@@ -11,19 +11,14 @@ class StudyTest {
     @DisplayName("스터디 만들기")
     void create_new_Study() {
         Study study = new Study(-10);
-        assertNotNull(study);
-        assertEquals(StudyStatus.DRAFT, study.getStatus(),
-                () -> "스터디를 처음 만들면" + StudyStatus.DRAFT + "상태다.");
-        /*
-        assertEquals(StudyStatus.DRAFT, study.getStatus(),"스터디를 처음 만들면 상태값이 DRAFT여야 한다.");
-        위처럼 말고, Line 15처럼 람다식으로 만들어주는게 더 좋다.
-        람다식을 쓸 경우 실패했을 경우에만 문자열 연산 비용이 들지만, 두 번째는 실패하든 성공하든, 문자열 연산 비용이 든다.
 
-        문자열 계산 하는 비용이 들 것 같으면 람다식을 쓰는 게 성능상 이점을 가질 수 있다. 위와 같은 경우.
-        */
-        assertTrue(study.getLimit() > 0, "스터디 최대 참석 인원은 0보다 커야 한다.");
-
-
+        assertAll(
+                () -> assertNotNull(study),
+                () -> assertEquals(StudyStatus.DRAFT, study.getStatus(),
+                () -> "스터디를 처음 만들면" + StudyStatus.DRAFT + " 상태다."),
+                () -> assertTrue(study.getLimit() > 0, "스터디 최대 참석 인원은 0보다 커야 한다.")
+        );
+        // 3개의 assert문을 모두 실행하기 때문에, 3개중 2개가 깨져도 모두 실행할 수 있다.
     }
 
     @Test
