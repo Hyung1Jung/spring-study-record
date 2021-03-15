@@ -1,8 +1,12 @@
 package com.example.testingweb.validatingforminput;
 
+import jdk.jfr.Enabled;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.condition.*;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
+import static org.junit.jupiter.api.Assumptions.assumingThat;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class StudyTest {
@@ -10,12 +14,30 @@ class StudyTest {
 
     @Test
     @DisplayName("스터디 만들기")
+    @EnabledOnOs({OS.LINUX, OS.MAC}) // OS에 특화된 TEST가 있다면
+    @EnabledOnJre({JRE.JAVA_8, JRE.JAVA_9, JRE.JAVA_11})
     void create_new_Study() {
-        Study actual = new Study(10);
-        assertThat(actual.getLimit()).isGreaterThan(0);
+        String test_env = System.getenv("TEST_ENV");
+        System.out.println(test_env);
+        // LOCAL인 경우에만 다음에 있는 TEST를 실행, 환경변수 = TEST_ENV -> LOCAL로 설정 헀을 때,
+        assumeTrue("LOCAL".equalsIgnoreCase(test_env));
+
+        assumingThat("LOCAL".equalsIgnoreCase(test_env), () -> {
+            System.out.println("local");
+            Study actual = new Study(100);
+            assertThat(actual.getLimit()).isGreaterThan(0);
+        });
+        assumingThat("hyungil".equalsIgnoreCase(test_env), () -> {
+            System.out.println("hyungil");
+            Study actual = new Study(10);
+            assertThat(actual.getLimit()).isGreaterThan(0);
+        });
+
     }
 
     @Test
+    @DisabledOnOs(OS.LINUX)
+    @EnabledOnOs(JRE.OTHER)
     void create1_new_study_again() {
         System.out.println("create1");
     }
