@@ -10,15 +10,10 @@ class StudyTest {
     @Test
     @DisplayName("스터디 만들기")
     void create_new_Study() {
-        Study study = new Study(-10);
-
-        assertAll(
-                () -> assertNotNull(study),
-                () -> assertEquals(StudyStatus.DRAFT, study.getStatus(),
-                () -> "스터디를 처음 만들면" + StudyStatus.DRAFT + " 상태다."),
-                () -> assertTrue(study.getLimit() > 0, "스터디 최대 참석 인원은 0보다 커야 한다.")
-        );
-        // 3개의 assert문을 모두 실행하기 때문에, 3개중 2개가 깨져도 모두 실행할 수 있다.
+        IllegalArgumentException exception =
+                assertThrows(IllegalArgumentException.class, () -> new Study(-10));
+        String message = exception.getMessage();
+        assertEquals("limit은 0보다 커야 한다.",message);
     }
 
     @Test
