@@ -5,19 +5,19 @@ import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
+@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class StudyTest {
 
-    @Test
+    @FastTest
     @DisplayName("스터디 만들기")
-    @EnabledIfEnvironmentVariable(named = "TEST_ENV", matches = "local")
     void create_new_Study() {
         Study actual = new Study(100);
         assertThat(actual.getLimit()).isGreaterThan(0);
 
     }
 
-    @Test
-    @EnabledIfEnvironmentVariable(named = "TEST_ENV", matches = "hyungil")
+    @SlowTest
+    @DisplayName("스터디 만들기 slow")
     void create1_new_study_again() {
         System.out.println("create1");
     }
