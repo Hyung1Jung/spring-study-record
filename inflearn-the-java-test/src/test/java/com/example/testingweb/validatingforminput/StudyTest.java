@@ -1,10 +1,16 @@
 package com.example.testingweb.validatingforminput;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.aggregator.AggregateWith;
+import org.junit.jupiter.params.aggregator.ArgumentsAccessor;
+import org.junit.jupiter.params.aggregator.ArgumentsAggregationException;
+import org.junit.jupiter.params.aggregator.ArgumentsAggregator;
 import org.junit.jupiter.params.converter.ArgumentConversionException;
 import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.converter.SimpleArgumentConverter;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 
@@ -32,11 +38,20 @@ class StudyTest {
     // 반복적인 테스트를 할 때마다, 다른 값들을 가지고 테스트틀 하고싶다.
     @DisplayName("스터디 만들기")
     @ParameterizedTest(name = "{index} {displayName} message = {0}")
-    @ValueSource(ints = {10, 20, 40})
-    void parameterizedTest(@ConvertWith(StudyConverter.class) Study study) {
-        System.out.println(study.getLimit());
+    @CsvSource({"10, '자바스터디'", "20, 스프링"})
+    void parameterizedTest(@AggregateWith(StudyAggregator.class) Study study) {
+        System.out.println(study);
     }
 
+    // 반드시 static inner 클래스거나 public여야 한다.
+    static class StudyAggregator implements ArgumentsAggregator {
+        @Override
+        public Object aggregateArguments(ArgumentsAccessor accessor, ParameterContext context) throws ArgumentsAggregationException {
+                return new Study(accessor.getInteger(0), accessor.getString(1));
+        }
+    }
+
+    // 하나의 argument를 다른 타입에 적용할때 쓰는 것이 SimpleArgumentConverter
     static class StudyConverter extends SimpleArgumentConverter{
         @Override
         protected Object convert(Object source, Class<?> targetType) throws ArgumentConversionException {
