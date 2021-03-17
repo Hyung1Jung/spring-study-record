@@ -8,22 +8,25 @@ import org.junit.jupiter.params.aggregator.ArgumentsAccessor;
 import org.junit.jupiter.params.aggregator.ArgumentsAggregationException;
 import org.junit.jupiter.params.aggregator.ArgumentsAggregator;
 import org.junit.jupiter.params.converter.ArgumentConversionException;
-import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.converter.SimpleArgumentConverter;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS) // Study Instance를 한 개만 만듬.
 class StudyTest {
 
+    int value = 0;
+
     @FastTest
-    @DisplayName("스터디 만들기")
+    @DisplayName("스터디 만들기 Fast")
     void create_new_Study() {
-        Study actual = new Study(100);
+        System.out.println(this);
+        System.out.println(value++);
+        Study actual = new Study(1);
         assertThat(actual.getLimit()).isGreaterThan(0);
     }
 
@@ -63,20 +66,22 @@ class StudyTest {
     @SlowTest
     @DisplayName("스터디 만들기 slow")
     void create1_new_study_again() {
-        System.out.println("create1");
+
+        System.out.println(this);
+        System.out.println("create1 " + value++);
     }
 
     // 모든 테스트가 실행되기 전에, 딱 한번 만 호출이 된다.
     // return 값을 가지면 안되고 반드시 static 이여야 한다.
     @BeforeAll
-    static void beforeAll() {
+    void beforeAll() {
         System.out.println("before all");
     }
 
     // 모든 테스트가 실행된 이후에, 딱 한번 만 호출이 된다.
     // return 값을 가지면 안되고 반드시 static 이여야 한다.
     @AfterAll
-    static void afterAll() {
+    void afterAll() {
         System.out.println("after all");
     }
 
