@@ -16,11 +16,13 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-@TestInstance(TestInstance.Lifecycle.PER_CLASS) // Study Instance를 한 개만 만듬.
+// @TestInstance(TestInstance.Lifecycle.PER_CLASS) // Study Instance를 한 개만 만듬.
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class) // OrderAnnotation을 가지고 순서를 정해준다.
 class StudyTest {
 
     int value = 0;
 
+    @Order(2)
     @FastTest
     @DisplayName("스터디 만들기 Fast")
     void create_new_Study() {
@@ -30,7 +32,17 @@ class StudyTest {
         assertThat(actual.getLimit()).isGreaterThan(0);
     }
 
+    @Order(1)
+    @SlowTest
+    @DisplayName("스터디 만들기 slow")
+    void create1_new_study_again() {
+
+        System.out.println(this);
+        System.out.println("create1 " + value++);
+    }
+
     // 아주 간단하게 테스트를 반복할 수 있다. 몇 번을 반복할지 적어주고, 테스트를 작성하면 된다.
+    @Order(3)
     @DisplayName("스터디 만들기")
     @RepeatedTest(value = 10, name = "{displayName}, {currentRepetition}/{totalRepetitions}")
     void repeatTest(RepetitionInfo repetitionInfo) {
@@ -39,19 +51,20 @@ class StudyTest {
     }
 
     // 반복적인 테스트를 할 때마다, 다른 값들을 가지고 테스트틀 하고싶다.
+    @Order(4)
     @DisplayName("스터디 만들기")
     @ParameterizedTest(name = "{index} {displayName} message = {0}")
     @CsvSource({"10, '자바스터디'", "20, 스프링"})
     void parameterizedTest(@AggregateWith(StudyAggregator.class) Study study) {
         System.out.println(study);
     }
-
     // 반드시 static inner 클래스거나 public여야 한다.
     static class StudyAggregator implements ArgumentsAggregator {
         @Override
         public Object aggregateArguments(ArgumentsAccessor accessor, ParameterContext context) throws ArgumentsAggregationException {
                 return new Study(accessor.getInteger(0), accessor.getString(1));
         }
+
     }
 
     // 하나의 argument를 다른 타입에 적용할때 쓰는 것이 SimpleArgumentConverter
@@ -61,27 +74,20 @@ class StudyTest {
             assertEquals(Study.class, targetType, "Can only convert to Study");
             return new Study(Integer.parseInt(source.toString()));
         }
-    }
 
-    @SlowTest
-    @DisplayName("스터디 만들기 slow")
-    void create1_new_study_again() {
-
-        System.out.println(this);
-        System.out.println("create1 " + value++);
     }
 
     // 모든 테스트가 실행되기 전에, 딱 한번 만 호출이 된다.
     // return 값을 가지면 안되고 반드시 static 이여야 한다.
     @BeforeAll
-    void beforeAll() {
+    static void beforeAll() {
         System.out.println("before all");
     }
 
     // 모든 테스트가 실행된 이후에, 딱 한번 만 호출이 된다.
     // return 값을 가지면 안되고 반드시 static 이여야 한다.
     @AfterAll
-    void afterAll() {
+    static void afterAll() {
         System.out.println("after all");
     }
 
