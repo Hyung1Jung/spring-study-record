@@ -15,7 +15,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
+// @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 // @TestInstance(TestInstance.Lifecycle.PER_CLASS) // Study Instance를 한 개만 만듬.
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class) // OrderAnnotation을 가지고 순서를 정해준다.
 class StudyTest {
@@ -35,6 +35,7 @@ class StudyTest {
     @Order(1)
     @SlowTest
     @DisplayName("스터디 만들기 slow")
+    @Disabled
     void create1_new_study_again() {
 
         System.out.println(this);
