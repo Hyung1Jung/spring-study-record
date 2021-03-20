@@ -2,8 +2,8 @@ package com.example.testingweb.validatingforminput;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.api.extension.Extensions;
 import org.junit.jupiter.api.extension.ParameterContext;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.aggregator.AggregateWith;
 import org.junit.jupiter.params.aggregator.ArgumentsAccessor;
@@ -17,11 +17,13 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@ExtendWith(FindSlowTestExtension.class) // 선언적 등록
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class) // OrderAnnotation을 가지고 순서를 정해준다.
 class StudyTest {
 
     int value = 0;
+
+    @RegisterExtension
+    static FindSlowTestExtension findslowTestExtension = new FindSlowTestExtension(1000L);
 
     @Order(2)
     @FastTest
@@ -34,7 +36,7 @@ class StudyTest {
     }
 
     @Order(1)
-    @SlowTest
+    @Test
     @DisplayName("스터디 만들기 slow")
     @Disabled
     void create_new_study_again() throws InterruptedException {
