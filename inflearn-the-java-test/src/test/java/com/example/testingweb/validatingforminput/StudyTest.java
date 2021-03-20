@@ -1,6 +1,8 @@
 package com.example.testingweb.validatingforminput;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.extension.Extensions;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.aggregator.AggregateWith;
@@ -15,8 +17,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-// @TestInstance(TestInstance.Lifecycle.PER_CLASS) // Study Instance를 한 개만 만듬.
+@ExtendWith(FindSlowTestExtension.class) // 선언적 등록
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class) // OrderAnnotation을 가지고 순서를 정해준다.
 class StudyTest {
 
@@ -36,8 +37,8 @@ class StudyTest {
     @SlowTest
     @DisplayName("스터디 만들기 slow")
     @Disabled
-    void create1_new_study_again() {
-
+    void create_new_study_again() throws InterruptedException {
+        Thread.sleep(1005L);
         System.out.println(this);
         System.out.println("create1 " + value++);
     }
