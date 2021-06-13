@@ -14,6 +14,7 @@
 * [HTTP 방식 중 URLConnection, HttpClient보다  RestTemplate가 효율적인 이유](https://junghyungil.tistory.com/84?category=892281)
 * [RestTemplate(2), xml -> json 변환 후, jackson을 이용하여 DTO와 mapping](https://junghyungil.tistory.com/87?category=892281)
 * [Filter와 Interceptor](https://junghyungil.tistory.com/123?category=892281)
+* [Profile](https://junghyungil.tistory.com/159?category=892281)  
 * [log4j vs Lockback vs log4j2, 프로젝트에 무엇을 적용하는게 좋을까?](https://junghyungil.tistory.com/160?category=892281)
 * [Log4j2의 Log Level과 성능 향상에 관하여](https://junghyungil.tistory.com/161?category=892281)
 
